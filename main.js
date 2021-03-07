@@ -146,6 +146,21 @@ var app = http.createServer(function(request,response){
             // console.log(post);
         });
 
+    } else if(pathname === '/delete_process') {
+        let body = '';
+        request.on('data', function(data){
+            body = body + data;
+        });
+        request.on('end', function(){
+            var post = qs.parse(body);
+            var id = post.id;
+            fs.unlink(`data/${id}`, function(error){
+                // 302 리다이렉션 코드번호
+                response.writeHead(302, {Location: `/`});
+                response.end();
+            });
+        });
+        
     } else {
       response.writeHead(404);
       response.end('Not found');
