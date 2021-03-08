@@ -2,11 +2,12 @@ var http = require('http');
 var fs = require('fs');
 var url = require('url');
 var qs = require('querystring');
-// const template = require('./lib/template');
+var template = require('./lib/template.js');
+var path = require('path');
+const { basename } = require('path');
 
 // refactoring
 
-var template = require('./lib/template.js');
 
 var app = http.createServer(function(request,response){
     var _url = request.url;
@@ -42,7 +43,8 @@ var app = http.createServer(function(request,response){
         });
       } else {
         fs.readdir('./data', function(error, filelist){
-          fs.readFile(`data/${queryData.id}`, 'utf8', function(err, description){
+        var filteredId = path.parse(queryData.id).base;
+          fs.readFile(`data/${filteredId}`, 'utf8', function(err, description){
             var title = queryData.id;
             var list = template.list(filelist);
             var html = template.HTML(title, list,
@@ -62,6 +64,7 @@ var app = http.createServer(function(request,response){
       }
     } else if(pathname === '/create'){
       fs.readdir('./data', function(error, filelist){
+        var filteredId = path.parse(queryData.id).base;
         var title = 'WEB - create';
         var list = template.list(filelist);
         var html = template.HTML(title, list, `
@@ -143,7 +146,8 @@ var app = http.createServer(function(request,response){
         request.on('end', function(){
             var post = qs.parse(body);
             var id = post.id;
-            fs.unlink(`data/${id}`, function(error){
+            var filteredId = path.parse(id).base;
+            fs.unlink(`data/${filteredId}`, function(error){
                 // 302 리다이렉션 코드번호
                 response.writeHead(302, {Location: `/`});
                 response.end();
