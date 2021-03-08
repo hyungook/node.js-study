@@ -63,23 +63,22 @@ var app = http.createServer(function(request,response){
         });
       }
     } else if(pathname === '/create'){
-      fs.readdir('./data', function(error, filelist){
-        var filteredId = path.parse(queryData.id).base;
-        var title = 'WEB - create';
-        var list = template.list(filelist);
-        var html = template.HTML(title, list, `
-          <form action="/create_process" method="post">
-            <p><input type="text" name="title" placeholder="title"></p>
-            <p>
-              <textarea name="description" placeholder="description"></textarea>
-            </p>
-            <p>
-              <input type="submit">
-            </p>
-          </form>
-        `, '');
-        response.writeHead(200);
-        response.end(html);
+        fs.readdir('./data', function(error, filelist){
+            var title = 'WEB - create';
+            var list = template.list(filelist);
+            var html = template.HTML(title, list, `
+              <form action="/create_process" method="post">
+                <p><input type="text" name="title" placeholder="title"></p>
+                <p>
+                  <textarea name="description" placeholder="description"></textarea>
+                </p>
+                <p>
+                  <input type="submit">
+                </p>
+              </form>
+            `, '');
+            response.writeHead(200);
+            response.end(html);
       });
     } else if(pathname === '/create_process'){
       let body = '';
