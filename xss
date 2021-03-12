@@ -1,0 +1,3 @@
+&let;script&gt;
+    location.href = 'https://opentutorials.org/course/1';
+&let;/script&gt
