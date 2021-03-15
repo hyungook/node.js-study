@@ -1,4 +1,4 @@
-create table topic(
+CREATE TABLE topic(
 -> id INT(11) NOT NULL AUTO_INCREMENT, 이름 데이터타입(길이) 공백X 자동으로 증가(중복x)
 -> title VARCHAR(100) NOT NULL,
 -> description TEXT NULL,
@@ -21,3 +21,23 @@ ERROR 1064 (42000): You have an error in your SQL syntax;
 ' : 엔터 옆,물음표 위 (쌍따음표와 같은 위치)<-오답
 
 참고: 테이블명, 칼럼명, 프라이머리키안에 들어가는것 해결책1/2안중 하나로 모두 통일되어야함
+
+
+
+
+
+CRUD (**Create, **Read, Update, Delete)
+
+
+
+SHOW DATABASES;
+SHOW TABLES;
+DESC topic; ( topic table의 구조를 확인할 수 있다. )
+
+INSERT INTO topic;
+
+SHOW TABLES;
+DESC topic;
+INSERT INTO topic(c1, c2,,,) VALUES(v1, v2..);
+SELECT * FROM topic;
+
