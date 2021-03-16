@@ -50,3 +50,9 @@ SELECT id, title, created, author FROM topic WHERE author='egoing' ORDER BY id D
 DESC topic;
 SELECT \* FROM topic;
 UPDATE topic SET description='Oracle is ...', title='Oracle' WHERE id=2; // WHERE 문을 꼭 추가해야 한다.
+
+### delete
+
+SELECT \* FROM topic;
+DELETE FROM topic WHERE id=5; // WHERE 문을 꼭 추가해야 한다. (인생이 바뀔 수 있음)
+SELECT \* FROM topic;
