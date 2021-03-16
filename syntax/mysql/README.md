@@ -44,3 +44,9 @@ SELECT \* FROM topic; // 모든 행 출력
 SELECT id, title, created, author FROM topic WHERE author='egoing'; // egoing만 출력
 SELECT id, title, created, author FROM topic WHERE author='egoing' ORDER BY id DESC; // 정렬
 SELECT id, title, created, author FROM topic WHERE author='egoing' ORDER BY id DESC LIMIT 2; // 개수 제한 (2)
+
+### update
+
+DESC topic;
+SELECT \* FROM topic;
+UPDATE topic SET description='Oracle is ...', title='Oracle' WHERE id=2; // WHERE 문을 꼭 추가해야 한다.
