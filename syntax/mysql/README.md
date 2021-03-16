@@ -1,3 +1,5 @@
+# DATABASE
+
 ### create table
 
 CREATE TABLE topic(
@@ -56,3 +58,35 @@ UPDATE topic SET description='Oracle is ...', title='Oracle' WHERE id=2; // WHER
 SELECT \* FROM topic;
 DELETE FROM topic WHERE id=5; // WHERE 문을 꼭 추가해야 한다. (인생이 바뀔 수 있음)
 SELECT \* FROM topic;
+
+### 정상
+
+Database - 본질(essence)
+Relational - 혁신(innovation)
+
+기술에서 혁신과 본질은 각각 무엇인가?
+-> 관계형(혁신), 데이터 베이스(본질)
+-> CRUD은 본질
+
+## 관계형 데이터베이스(Realtional Database)의 필요성
+
+데이터베이스에 중복된 데이터가 있다 => 개선의 여지가 있다!
+
+데이터가 많이 중복될수록 많은 문제가 야기됨 :
+복잡하고 용량이 큰 데이터가 중복될수록,
+
+1. 기술적, 경제적으로 엄청난 손실
+2. 데이터를 수정해야 할 때, 낭비되는 시간
+3. 데이터의 구분이 어려움
+
+#### trade off
+
+장점이 생기면 단점도 생긴다.
+
+- 테이블을 분리하지 않으면,
+  모든 데이터를 한 눈에 볼 수 있기 때문에 직관적으로 데이터를 볼 수 있다.
+
+#테이블을 분리하면,
+데이터를 볼 때, 해당 데이터에 해당되는 별도의 테이블을 열어서 비교.대조해야 하는 불편함
+
+저장은 분산, 볼 때에는 합쳐서
