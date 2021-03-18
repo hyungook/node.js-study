@@ -90,3 +90,45 @@ Relational - 혁신(innovation)
 데이터를 볼 때, 해당 데이터에 해당되는 별도의 테이블을 열어서 비교.대조해야 하는 불편함
 
 저장은 분산, 볼 때에는 합쳐서
+
+### 테이블 분리하기
+
+RENAME TABLE topic TO topic_backup; //테이블 이름 변경
+
+#### table 조회
+
+- use mysql;
+
+### 테이블 분리하기
+
+--
+-- Table structure for table `author`
+--
+
+CREATE TABLE `author` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`name` varchar(20) NOT NULL,
+`profile` varchar(200) DEFAULT NULL,
+PRIMARY KEY (`id`)
+);
+
+--
+-- Dumping data for table `author`
+--
+
+INSERT INTO `author` VALUES (1,'egoing','developer');
+INSERT INTO `author` VALUES (2,'duru','database administrator');
+INSERT INTO `author` VALUES (3,'taeho','data scientist, developer');
+
+--
+-- Table structure for table `topic`
+--
+
+CREATE TABLE `topic` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`title` varchar(30) NOT NULL,
+`description` text,
+`created` datetime NOT NULL,
+`author_id` int(11) DEFAULT NULL,
+PRIMARY KEY (`id`)
+);
