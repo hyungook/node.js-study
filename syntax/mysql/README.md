@@ -132,3 +132,33 @@ CREATE TABLE `topic` (
 `author_id` int(11) DEFAULT NULL,
 PRIMARY KEY (`id`)
 );
+
+### 관계형 데이터베이스의 꽃 JOIN
+
+각각 독립적인(분리된) 테이블을 읽을 때, 그 테이블이 하나의 테이블로 저장되어 있었던 것과 같은 효과.
+
+테이블과 테이블을 JOIN 하기 위해서는,
+데이터베이스가 어떠한 목적을 가지고 있는지를 말할 수 있어야 한다.
+
+SELECT \* FROM topic LEFT JOIN author ON topic.author_id = author.id;
+
+topic 테이블의 author_id 값과, author테이블의 id 값이 같다
+
+SELECT topic.id, title, description, created, name, profile FROM topic LEFT JOIN author ON topic.author_id = author.id;
+
+행을 보기 편하게 바꾸고 싶을 때,,
+
+AS 사용 : topic.id AS topic_id
+
+정보 기술에서 중복을 제외 한다는 것. // 중요!!
+
+테이블을 분리한다는 것.
+만약 테이블이 특정 식별자를 가지고 있다면, JOIN을 통해 얼마든지 관계를 맺을 수 있다.
+
+SELECT \* FROM comment LEFT JOIN author ON comment.author_id = author.id;
+
+UPDATE author SET profile='database administrator' WHERE id = 2;
+
+'하나를 바꾸면 전체가 바뀐다'
+
+### JOIN은 관계형 데이터베이스를 관계형 데이터베이스 답게 만드는 명령어
