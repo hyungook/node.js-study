@@ -228,3 +228,20 @@ MySQL workbench = GUI 기반의 프로그램
 고로 워크벤치를 컴퓨터 그 안에서는 실행할 수 없다.
 
 장점 = 마우스로 쉽게 조작할 수 있다.
+
+#### MySQL 실행
+
+- ./mysql -uroot -p -hlocalhost
+- mysql 모니터 실행 / 사용자 / 비밀번호 입력 / -h(host의 약자 / host = 인터넷에 연결되어 있는 각가의 컴퓨터의 호스트)
+
+#### 정리
+
+index(색인): 양적 완화의 구원 keyword, 사용자들이 검색을 자주 하는 컬럼에 색인을 걸어둠
+
+modeling: 성능, 설계 상의 구원 keyword
+
+backup: 내 컴퓨터와 별도의 컴퓨터에 복제해서 보관 ex)mysqldump, binary log
+
+cloud: 내 컴퓨터가 아닌 큰 회사들의 인프라를 임대해서 원격 제어, backup도 알아서 해줌 ex)aWS RDS, Google Cloud SQL for MySQL, AZURE Database for MySQL
+
+programming: DB 서버 핸들링 ex) python mysql api, php mysql api, java mysql api
