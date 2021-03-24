@@ -245,3 +245,7 @@ backup: 내 컴퓨터와 별도의 컴퓨터에 복제해서 보관 ex)mysqldump
 cloud: 내 컴퓨터가 아닌 큰 회사들의 인프라를 임대해서 원격 제어, backup도 알아서 해줌 ex)aWS RDS, Google Cloud SQL for MySQL, AZURE Database for MySQL
 
 programming: DB 서버 핸들링 ex) python mysql api, php mysql api, java mysql api
+
+##### 'Error: listen EADDRINUSE: address already in use :::3000' 오류
+
+- cmd창에서 pm2 kill 사용하셔서 모든 port를 종료하시고 다시 실행하시면 된다. (포트 충돌 문제)
